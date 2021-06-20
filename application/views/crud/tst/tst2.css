@@ -1,0 +1,89 @@
+/*Card Button kabel*/
+
+.card-cable {
+    border: 2px solid rgba(0, 0, 0, 0.1);
+    border-radius: 0.65rem;
+}
+
+.card-input-element+.card-cable {
+    width: 256px;
+    height: auto;
+    margin: 10px;
+    justify-content: center;
+    color: var(--primary);
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    border: 2px solid transparent;
+    border-radius: 10px;
+    text-align: center;
+    -webkit-box-shadow: 0 4px 25px 0 rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 25px 0 rgba(0, 0, 0, 0.1);
+    opacity: .7;
+}
+
+@media (max-width: 576px) {
+    .card-input-element+.card-cable {
+        width: 128px;
+        height: auto;
+    }
+}
+
+
+.card-input-element+.card-cable:hover {
+    cursor: pointer;
+    opacity: 1;
+    border: 2px solid #02a15c;
+}
+
+
+
+.card-input-element:checked+.card-cable::after {
+    content: "\f058";
+    color: rgba(2, 161, 92, 0.6);
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    font-family: "Font Awesome 5 Free";
+    font-style: normal;
+    font-size: 1rem;
+    font-weight: 900;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-animation-name: fadeInCheckbox;
+    animation-name: fadeInCheckbox;
+    -webkit-animation-duration: 0.3s;
+    animation-duration: 0.3s;
+    -webkit-animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@-webkit-keyframes fadeInCheckbox {
+    from {
+        opacity: 0;
+        -webkit-transform: rotateZ(-20deg);
+    }
+
+    to {
+        opacity: 1;
+        -webkit-transform: rotateZ(0deg);
+    }
+}
+
+@keyframes fadeInCheckbox {
+    from {
+        opacity: 0;
+        transform: rotateZ(-20deg);
+    }
+
+    to {
+        opacity: 1;
+        transform: rotateZ(0deg);
+    }
+}
+
+.content-body img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}

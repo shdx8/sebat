@@ -1,0 +1,135 @@
+input[type=radio] {
+    display: none;
+}
+
+
+/*hraga*/
+.harga label {
+    width: 100%;
+    height: auto;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+    border-radius: 10px;
+    padding: 18px 16px;
+    margin: 0 8px;
+    background-color: #fff;
+    transition: 0.1s;
+    position: relative;
+    text-align: left;
+    box-sizing: border-box;
+}
+
+.harga label:hover {
+    cursor: pointer;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+}
+
+@media (max-width: 576px) {
+    .harga label {
+        width: 100%;
+        height: auto;
+    }
+}
+
+.radio-text {
+    color: #777;
+}
+
+.radio-check {
+    display: none;
+}
+
+.check-ico {
+    color: #02a15c;
+    position: absolute;
+    top: 12px;
+    right: 8px;
+}
+
+
+/*kabel*/
+
+.card-pinjam label {
+    width: 150px;
+    height: auto;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+    border-radius: 10px;
+    padding: 18px 18px;
+    margin: 0 8px;
+    background-color: #fff;
+    transition: 0.1s;
+    position: relative;
+    text-align: left;
+    box-sizing: border-box;
+    opacity: .7;
+}
+
+@media (max-width: 576px) {
+    .card-pinjam label {
+        width: 25%;
+        height: auto;
+    }
+}
+
+@media (min-width: 768px) {
+    .card-pinjam label {
+        width: 150px;
+        height: auto;
+    }
+}
+
+.card-pinjam label:hover {
+    opacity: 1;
+    cursor: pointer;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+}
+
+.card-pinjam .label-checked {
+    opacity: 1;
+    border: 2px solid #02a15c;
+    background-color: hsl(95, 60%, 90%) !important;
+}
+
+.harga .label-checked-durasi {
+    opacity: 1;
+    border: 2px solid #02a15c;
+    background-color: hsl(95, 60%, 90%) !important;
+}
+
+.radio-header {
+    font-weight: 600;
+}
+
+.radio-text {
+    color: #777;
+}
+
+.radio-check {
+    display: none;
+}
+
+.radio-check-durasi {
+    display: none;
+}
+
+.check-icon {
+    color: #02a15c;
+    position: absolute;
+    top: 12px;
+    right: 8px;
+}
+
+.radio-body {
+    font-size: 24px;
+    font-weight: bold;
+    margin-top: 8px;
+}
+
+.radio-body img {
+    width: 100%;
+    height: auto;
+}
+
+.total p {
+    font-weight: 500;
+    font-size: 1.5em;
+}
