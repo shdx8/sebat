@@ -1,8 +1,0 @@
-Thanks for downloading this theme!
-
-Theme Name: sleek-dashboard
-Bootstrap: v4.1.3
-Author: tafcoder
-Author URL: http://tafcoder.com/
-category: bootstrap admin template 
-tags: dashboard, admin-dashboard, dashboard-templates, admin-panel, admin-template, uikit, bootstrap-theme, bootstrap-template, bootstrap-admin-dashboard, jekyll

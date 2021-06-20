@@ -9,7 +9,7 @@ class Dashboard extends CI_Controller{//membuat controller mahasiswa
 	
 	public function index(){
 			$data['user'] = $this->User_model->getAll()->result();
-			$this->template->views('crud/home',$data);
+			$this->template->views('dashboard/home',$data);
 	}
 
 	public function tambah() {//membuat function tambah

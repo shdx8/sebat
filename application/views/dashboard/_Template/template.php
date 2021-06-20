@@ -11,13 +11,13 @@ $getGrup = $this->session->userdata('session_grup');
 
 
 <body class="sidebar-fixed sidebar-dark header-light header-fixed" id="body">
-	<script>
+	<!-- <script>
 		NProgress.configure({
 			showSpinner: false
 		});
 		NProgress.start();
 
-	</script>
+	</script> -->
 	<div class="wrapper">
 
 		<!--
@@ -40,11 +40,11 @@ $getGrup = $this->session->userdata('session_grup');
 
 
 
-			</div>
 
 			<footer class="footer mt-auto">
 				<?= @$footer; ?>
 			</footer>
+			</div>
 
 		</div>
 	</div>

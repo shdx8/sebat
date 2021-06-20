@@ -5,9 +5,6 @@ $getGrup = $this->session->userdata('session_grup');
 <head>
 	<title>SeBat - Dashboard</title>
 </head>
-
-<body class="sidebar-fixed sidebar-dark header-light header-fixed" id="body">
-
 	<div class="content-wrapper">
 		<div class="content">
 			<div class="row">
@@ -118,7 +115,4 @@ $getGrup = $this->session->userdata('session_grup');
 
 
 
-	</div>
-
-	</div>
 	</div>

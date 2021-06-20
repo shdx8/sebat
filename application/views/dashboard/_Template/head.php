@@ -20,6 +20,7 @@
 
 <!-- SLEEK CSS -->
 <link id="sleek-css" rel="stylesheet" href="<?= base_url(); ?>/assets/css/sleek.css" />
+<link id="sleek-css" rel="stylesheet" href="<?= base_url(); ?>/assets/css/sebat.css" />
 
 
 

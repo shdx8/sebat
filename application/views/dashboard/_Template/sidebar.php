@@ -23,7 +23,7 @@ $getGrup = $this->session->userdata('session_grup');
 	<div class="sidebar-scrollbar">
 		<!-- sidebar menu -->
 		<ul class="nav sidebar-inner" id="sidebar-menu">
-			<li class="has-sub active expand">
+			<li class="has-sub expand">
 				<a class="sidenav-item-link" href="<?= base_url('Dashboard'); ?>">
 					<i class="mdi mdi-view-dashboard-outline"></i>
 					<span class="nav-text">Dashboard</span>

@@ -9,8 +9,6 @@ $getGrup = $this->session->userdata('session_grup');
 
 <div class="content-wrapper">
 	<div class="content">
-
-
 		<div class="row">
 			<div class="col-md-12 container-fluid">
 
@@ -84,13 +82,13 @@ $getGrup = $this->session->userdata('session_grup');
 										<div class="radio-body"><img src="<?= base_url(); ?>/assets/img/cable/lightning.png" alt=""></div>
 									</label>
 								</div>
-								<div class="col-md-auto">
+								<!-- <div class="col-md-auto">
 									<label>
 										<input type="text" value="m" size="3" readonly>
 										<input type="text" value="c" size="3" readonly>
 										<input type="text" value="l" size="3" readonly>
 									</label>
-								</div>
+								</div> -->
 							</div>
 						</div>
 
@@ -181,29 +179,5 @@ $getGrup = $this->session->userdata('session_grup');
 
 			</div>
 		</div>
-
 	</div>
-
-
-
-
-</div>
-
-
-<footer class="footer mt-auto">
-	<div class="copyright bg-white">
-		<p>
-			&copy; <span id="copy-year">2019</span> Copyright Sleek Dashboard Bootstrap Template by
-			<a class="text-primary" href="http://www.iamabdus.com/" target="_blank">Abdus</a>.
-		</p>
-	</div>
-	<script>
-		var d = new Date();
-		var year = d.getFullYear();
-		document.getElementById("copy-year").innerHTML = year;
-
-	</script>
-</footer>
-
-</div>
 </div>
