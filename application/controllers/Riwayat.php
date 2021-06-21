@@ -13,3 +13,4 @@ class Riwayat extends CI_Controller{//membuat controller mahasiswa
 			$this->template->views('crud/history',$data);
 	}
 }
+?>
