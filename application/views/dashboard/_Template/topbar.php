@@ -29,7 +29,7 @@
 				</button>
 				<ul class="dropdown-menu dropdown-menu-right">
                   <li class="dropdown-footer">
-						<a href="<?= base_url('Auth/logout'); ?>"> <i class="mdi mdi-account"></i>My Profile</a>
+						<a href="<?= base_url('Profile/index'); ?>"> <i class="mdi mdi-account"></i>My Profile</a>
 					</li>
 					<li class="dropdown-footer">
 						<a href="<?= base_url('Auth/logout'); ?>"> <i class="mdi mdi-logout"></i> Log Out </a>
