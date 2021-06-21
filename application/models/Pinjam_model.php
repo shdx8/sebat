@@ -2,8 +2,7 @@
 class Pinjam_model extends CI_Model{
 	function getAll(){//function getAll
 		$this->db->select('*');//select semua data
-		$this->db->from('user');//dari table user
-		$this->db->join('role', 'user.role = role.id_role');//gabungkan table grup dan user menggunakan id_grup
+		$this->db->from('pinjam');//dari table user
 		$query = $this->db->get();
 		return $query;//lakukan query db
 	}
