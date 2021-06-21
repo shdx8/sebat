@@ -36,7 +36,7 @@ $getGrup = $this->session->userdata('session_grup');
 				</a>
 			</li>
 			<li class="has-sub">
-				<a class="sidenav-item-link" href="<?= base_url('History'); ?>">
+				<a class="sidenav-item-link" href="<?= base_url('Riwayat'); ?>">
 					<i class="mdi mdi-history"></i>
 					<span class="nav-text">Riwayat</span>
 				</a>

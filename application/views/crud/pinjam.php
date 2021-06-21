@@ -39,7 +39,7 @@ $getGrup = $this->session->userdata('session_grup');
               $id_pinjam = $huruf . sprintf("%03s", $urutan);
               ?> -->
 				<div class="card card-body">
-					<form action="act/pinjam.php" method="POST">
+					<form class="user" action="<?php echo base_url('Pinjam/input');?>" method="POST">
 						<div class="form-group">
 							<input type="text" name="id_pinjam" class="form-control" value="<?= $id_pinjam ?>" readonly hidden>
 						</div>
@@ -171,7 +171,8 @@ $getGrup = $this->session->userdata('session_grup');
 						<div class="form-group">
 							<div class="row">
 								<div class="col-md-8">&nbsp;</div>
-								<div class="col-md-4"><button class="btn btn-primary btn-block">Pinjam</button></div>
+								<input type="submit" class="btn btn-success btn-icon-split" name="submit" value="Pinjam"></div>
+								<div></div>
 							</div>
 						</div>
 					</form>
