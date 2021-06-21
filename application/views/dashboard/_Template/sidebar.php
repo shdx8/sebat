@@ -29,6 +29,17 @@ $getGrup = $this->session->userdata('session_grup');
 					<span class="nav-text">Dashboard</span>
 				</a>
 			</li>
+
+			<?php
+            if($getGrup==1){
+                echo '
+			<li class="has-sub">
+				<a class="sidenav-item-link" href="User">
+					<i class="mdi mdi-swap-horizontal-bold"></i>
+					<span class="nav-text">Data User</span>
+				</a>
+			</li>';}?>
+
 			<li class="has-sub">
 				<a class="sidenav-item-link" href="<?= base_url('Pinjam'); ?>">
 					<i class="mdi mdi-swap-horizontal-bold"></i>
