@@ -34,9 +34,4 @@ public function remove($id_pinjam){
 		$this->Pinjam_model->hapus_data($where, 'pinjam');
 		redirect('Riwayat');
 	}
-
-<<<<<<< Updated upstream
 }
-=======
-}
->>>>>>> Stashed changes
