@@ -1,6 +1,6 @@
 <?php
 $getUser = $this->session->userdata('session_user');
-$getGrup = $this->session->userdata('session_grup');
+$getRole = $this->session->userdata('session_role');
 ?>
 
 <head>
@@ -30,7 +30,7 @@ $getGrup = $this->session->userdata('session_grup');
 									<th class="font-weight-bold text-reset">Total</th>
 									<th class="font-weight-bold text-reset">Order Date</th>
 									<th class="font-weight-bold text-reset">Status</th>
-									<th>&nbsp</th>
+									<th class="font-weight-bold text-reset">&nbsp</th>
 								</tr>
 							</thead>
 							<tbody>
@@ -46,22 +46,30 @@ $getGrup = $this->session->userdata('session_grup');
 									<td class="d-none d-lg-table-cell"><?= $p->kabel ?></td>
 									<td class="d-none d-lg-table-cell"><?= $p->total ?></td>
 									<td class="d-none d-lg-table-cell"><?= $p->tgl_pinjam ?></td>
-									<td class="d-none d-lg-table-cell"><?= $p->status ?></td>
+									<td class="d-none d-lg-table-cell">
+												<?php if($p->status == 'pinjam'){ ?>
+                        <span class="badge badge-warning">Pinjam</span>
+                        <?php }else if($p->status == 'selesai'){ ?>
+                        <span class="badge badge-success">Selesai</span>
+                        <?php } ?>
+									</td>
 									<td class="text-right">
 										<div class="dropdown show d-inline-block widget-dropdown">
 											<a class="dropdown-toggle icon-burger-mini" href="" role="button" id="dropdown-recent-order1"
 												data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-display="static"></a>
 											<ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdown-recent-order1">
-												<?php if($d['status'] == 'pinjam'){ ?>
+												<?php if($p->status == 'pinjam'){ ?>
 												<li class="dropdown-item">
-													<a href="act/status.php?id_pinjam=<?= $d['id_pinjam'] ?>">Selesai</a>
+													<a href="<?= base_url('Riwayat/status/'.$p->id_pinjam); ?>">Selesai</a>
 												</li>
 												<li class="dropdown-item">
-													<a href="act/delete.php?id_pinjam=<?= $d['id_pinjam'] ?>">Remove</a>
-												</li <?php }else if($d['status'] == 'selesai'){ ?> <li class="dropdown-item">
-												<a href="act/delete.php?id_pinjam=<?= $d['id_pinjam'] ?>">Remove</a>
+													<a href="<?= base_url('Riwayat/remove/'.$p->id_pinjam); ?>">Remove</a>
+												</li> 
+												<?php } else if($p->status == 'selesai'){ ?> 
+												<li class="dropdown-item">
+										    	<a href="<?= base_url('Riwayat/remove/'.$p->id_pinjam); ?>">Remove</a>
+												</li>
 												<?php } ?>
-												</li>
 											</ul>
 										</div>
 									</td>
