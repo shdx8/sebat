@@ -35,4 +35,8 @@ public function remove($id_pinjam){
 		redirect('Riwayat');
 	}
 
+<<<<<<< Updated upstream
 }
+=======
+}
+>>>>>>> Stashed changes
