@@ -18,10 +18,10 @@ class Auth extends CI_Controller{
 		if($cek != FALSE) {
 			foreach ($cek as $row) {
 				$user = $row->username;
-				$grup = $row->grup;
+				$role = $row->role;
 			}
 			$this->session->set_userdata('session_user', $user);
-			$this->session->set_userdata('session_grup', $grup);
+			$this->session->set_userdata('session_role', $role);
 			redirect('Dashboard');
 		} else {
 			$this->load->view('login');
