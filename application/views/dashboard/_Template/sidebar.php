@@ -1,6 +1,6 @@
 <?php
 $getUser = $this->session->userdata('session_user');
-$getGrup = $this->session->userdata('session_grup');
+$getRole = $this->session->userdata('session_role');
 ?>
 <div id="sidebar" class="sidebar sidebar-with-footer">
 	<!-- Aplication Brand -->
@@ -29,30 +29,45 @@ $getGrup = $this->session->userdata('session_grup');
 					<span class="nav-text">Dashboard</span>
 				</a>
 			</li>
+		<!-- //if($getRole==2) {
+		//echo ' -->
 			<li class="has-sub">
-				<a class="sidenav-item-link" href="<?= base_url('Pinjam'); ?>">
+				<a class="sidenav-item-link" href="Pinjam">
 					<i class="mdi mdi-swap-horizontal-bold"></i>
 					<span class="nav-text">Pinjam</span>
 				</a>
 			</li>
 			<li class="has-sub">
-				<a class="sidenav-item-link" href="<?= base_url('Riwayat'); ?>">
+				<a class="sidenav-item-link" href="Riwayat">
 					<i class="mdi mdi-history"></i>
 					<span class="nav-text">Riwayat</span>
 				</a>
 			</li>
+		<li class="has-sub">
+				<a class="sidenav-item-link" href="Help">
+					<i class="mdi mdi-information"></i>
+					<span class="nav-text">Bantuan</span>
+				</a>
+			</li>
+			<!-- ';}?> -->
+
+		<?php
+		if($getRole==1) {
+		echo '<li class="has-sub">
+				<a class="sidenav-item-link" href="User">
+					<i class="mdi mdi-card-account-details"></i>
+					<span class="nav-text">Data User</span>
+				</a>
+			</li>';}?>
+
+ 
 			<!-- <li class="has-sub">
               <a class="sidenav-item-link" href="profile.php">
                 <i class="mdi mdi-account"></i>
                 <span class="nav-text">Profile</span>
               </a>
             </li> -->
-			<li class="has-sub">
-				<a class="sidenav-item-link" href="<?= base_url('Help'); ?>">
-					<i class="mdi mdi-information"></i>
-					<span class="nav-text">Bantuan</span>
-				</a>
-			</li>
+			
 		</ul>
 	</div>
 </div>

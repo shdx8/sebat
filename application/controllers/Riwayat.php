@@ -12,5 +12,27 @@ class Riwayat extends CI_Controller{//membuat controller mahasiswa
 			$data['pinjam'] = $this->Pinjam_model->getAll()->result();
 			$this->template->views('crud/history',$data);
 	}
+
+	public function status() {
+		$id_pinjam = $this->input->post('id_pinjam');
+		$status = $this->input->post('status');
+
+		$data = array(
+			'status' => 'selesai',
+		);
+		
+		$where = array(
+			'id_pinjam' => $id_pinjam
+		);
+
+		$this->Pinjam_model->update_status($where,$data, 'pinjam');
+		redirect('Riwayat');
+	}
+
+public function remove($id_pinjam){
+		$where=array('id_pinjam'=>$id_pinjam);
+		$this->Pinjam_model->hapus_data($where, 'pinjam');
+		redirect('Riwayat');
+	}
+
 }
-?>
