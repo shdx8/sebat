@@ -9,24 +9,30 @@ class Pinjam extends CI_Controller{//membuat controller mahasiswa
 	
 	public function index(){
 			$data['user'] = $this->Pinjam_model->getAll()->result();
+			$data['id_new'] = $this->Pinjam_model->auto_id();
 			$this->template->views('crud/pinjam',$data);
 	}
 
 	public function input() {//membuat fucntion input untuk menginput data ke db
 		//membuat beberapa variable untuk input
+		$id_pinjam = $this->input->post('id_pinjam');
 		$nama_peminjam = $this->input->post('nama_peminjam');
 		$no_hp = $this->input->post('no_hp');
-		$cable = $this->input->post('kabel');
-		$durasi = $this->input->post('total');
+		$kabel = $this->input->post('kabel');
+		$total = $this->input->post('total');
 		$tgl_pinjam = $this->input->post('tgl_pinjam');
 
+
 		$data = array(//membuat array untuk menampung data yang telah diinput
+			'id_pinjam' => $id_pinjam,
 			'nama_peminjam' => $nama_peminjam,
 			'no_hp' => $no_hp,
-			'kabel' => $cable,
-			'total' => $durasi,
-			'tgl_pinjam' => $tgl_pinjam
+			'kabel' => $kabel,
+			'total' => $total,
+			'tgl_pinjam' => $tgl_pinjam,
+			'status' => 'pinjam'
 		);
+
 		$this->Pinjam_model->input_data($data, 'pinjam');//mengakses User_model dan data yang ada pada table user
 		redirect('Dashboard/index');//setelah data berhasil disimpan, maka kembalikan ke index
 	}
