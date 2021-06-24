@@ -28,6 +28,6 @@ class Pinjam extends CI_Controller{//membuat controller mahasiswa
 			'tgl_pinjam' => $tgl_pinjam
 		);
 		$this->Pinjam_model->input_data($data, 'pinjam');//mengakses User_model dan data yang ada pada table user
-		redirect('Dashboard/index');//setelah data berhasil disimpan, maka kembalikan ke index
+		redirect('Pinjam');//setelah data berhasil disimpan, maka kembalikan ke index
 	}
 }
