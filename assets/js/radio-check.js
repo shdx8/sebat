@@ -1,6 +1,6 @@
 $(function () {
 
-    $('input[name=durasi]').on('change', function () {
+    $('input[name=total]').on('change', function () {
         let $this = $(this);
         let $label = $this.parent('label');
 
@@ -18,7 +18,7 @@ $(function () {
 
 $(function () {
 
-    $('input[name=cable]').on('change', function () {
+    $('input[name=kabel]').on('change', function () {
         let $this = $(this);
         let $label = $this.parent('label');
 
