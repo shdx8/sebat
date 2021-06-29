@@ -34,5 +34,9 @@ class User_model extends CI_Model{
 		$query = $this->db->get();
 		return $query;
 	}
+
+	function cek_login($table,$where){		
+		return $this->db->get_where($table,$where);
+	}	
 }
 ?>
