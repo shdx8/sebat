@@ -2,8 +2,7 @@
 class Pinjam_model extends CI_Model{
 
 	// Function untuk membuat ID secara otomatis dari ID terakhir
-	function auto_id()
-	{
+	function auto_id(){
 		$query = $this->db->query("SELECT max(id_pinjam) as id_new FROM pinjam");
 		$data =$query->row_array();
 		$id_pinjam = $data['id_new'];
