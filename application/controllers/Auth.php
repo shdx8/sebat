@@ -32,5 +32,13 @@ class Auth extends CI_Controller{
 		$this->session->sess_destroy();
 		redirect('Auth');
 	}
+
+	public function LoginAPI() {
+		$username = $this->input->post('txt_user');
+		$password = $this->input->post('txt_pass');
+		$result = $this->User_model->login($username, $password,'user')->result();
+		echo json_encode($result);
+	
+	}
 }
 ?>
