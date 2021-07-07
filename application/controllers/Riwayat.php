@@ -13,9 +13,7 @@ class Riwayat extends CI_Controller{//membuat controller mahasiswa
 			$this->template->views('crud/history',$data);
 	}
 
-	public function status() {
-		$id_pinjam = $this->input->post('id_pinjam');
-		$status = $this->input->post('status');
+	public function status($id_pinjam) {
 
 		$data = array(
 			'status' => 'selesai',
@@ -34,5 +32,4 @@ public function remove($id_pinjam){
 		$this->Pinjam_model->hapus_data($where, 'pinjam');
 		redirect('Riwayat');
 	}
-
 }
