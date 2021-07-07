@@ -36,24 +36,34 @@ class Pinjam extends CI_Controller{//membuat controller mahasiswa
 		$this->Pinjam_model->input_data($data, 'pinjam');//mengakses User_model dan data yang ada pada table user
 		redirect('Pinjam');//setelah data berhasil disimpan, maka kembalikan ke index
 	}
+
+
+
+//---API---//
+
+
 	public function Api() {
 		$data = $this->Pinjam_model->getAll();
 		echo json_encode($data->result_array());;
 	}
 
-	public function ApiInsert(){
+	public function ApiInsert(){		
+		date_default_timezone_set('Asia/Jakarta'); # add your city to set local time zone
+		$date = date('Y-m-d');
+		$id_pinjam = $this->Pinjam_model->auto_id();
 		$nama_peminjam = $this->input->post('nama_peminjam');
 		$no_hp = $this->input->post('no_hp');
 		$cable = $this->input->post('kabel');
 		$durasi = $this->input->post('total');
-		$tgl_pinjam = $this->input->post('tgl_pinjam');
 
 		$data = array(//membuat array untuk menampung data yang telah diinput
+			'id_pinjam' => $id_pinjam,
 			'nama_peminjam' => $nama_peminjam,
 			'no_hp' => $no_hp,
 			'kabel' => $cable,
 			'total' => $durasi,
-			'tgl_pinjam' => $tgl_pinjam
+			'tgl_pinjam' => $date,
+			'status' => 'pinjam'
 		);
 		$this->Pinjam_model->input_data($data, 'pinjam');
 		echo json_encode($array);

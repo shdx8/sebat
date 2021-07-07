@@ -41,7 +41,7 @@ $getRole = $this->session->userdata('session_role');
 				<div class="card card-body">
 					<form class="user" action="<?php echo base_url('Pinjam/input');?>" method="POST">
 						<div class="form-group">
-							<input type="text" name="id_pinjam" class="form-control" value="<?= $id_new ?>" readonly>
+							<input type="text" name="id_pinjam" class="form-control" value="<?= $id_new ?>" readonly hidden>
 						</div>
 						<div class="form-group">
 							<H3 for="exampleFormControlInput1">Nama Peminjam</H3>
