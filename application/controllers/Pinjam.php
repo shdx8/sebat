@@ -70,9 +70,9 @@ class Pinjam extends CI_Controller{//membuat controller mahasiswa
 	}
 
 	public function ApiDelete(){
-		$id_pinjam = $this->input->post('id_pinjam');
+		$id_pinjam = $this->input->GET('id_pinjam');
 		$where = array('id_pinjam'=>$id_pinjam);
-		if($this->Pinjam_model->hapus_data($where, 'pinjam')>0){
+		if($this->Pinjam_model->hapusAPI($where, 'pinjam')>0){
 			$response=[
 				'success'=>true,
 				'message'=>'data berhasil dihapus'
@@ -86,7 +86,7 @@ class Pinjam extends CI_Controller{//membuat controller mahasiswa
 			echo json_encode($response);
 		}
 		public function DeleteAPI(){
-		if($this->input->post('username')){
+		if($this->input->GET('username')){
 			$where=array('username'=>$this->input->post('username'));
 			if($this->Pinjam_model->hapus_data($where,'pinjam')){
 				$array=array('success'=>true);
@@ -121,18 +121,28 @@ class Pinjam extends CI_Controller{//membuat controller mahasiswa
 	}
 
 public function ApiLogin() {
+		$this->load->model('User_model');
+		$_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
 		$username = $this->input->post('txt_user');
 		$password = $this->input->post('txt_pass');
+		$response = [];
 		$cek = $this->User_model->login($username, $password,'user')->result();
 		if($cek != FALSE) {
 			foreach ($cek as $row) {
-				$user = $row->username;
-				$role = $row->role;
+			
+				$response = [
+					'login' => true,
+					'user' => $row->username, 
+					'role' => $row->role, 
+				];
 			}
-			$this->session->set_userdata('session_user', $user);
-			$this->session->set_userdata('session_role', $role);
-			echo json_encode($array);
-		} 
+		} else {
+			$response = [
+				'login' => true,
+				'message' => 'Username atau password salah', 
+			];
+		}
+		echo json_encode($response);
 	}
 
 /*function aksi_login(){
