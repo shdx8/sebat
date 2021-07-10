@@ -70,16 +70,33 @@ class Pinjam extends CI_Controller{//membuat controller mahasiswa
 	}
 
 	public function ApiDelete(){
-		if ($this->input->post('nama_peminjam')) {
-			$where = array('nama_peminjam' => $this ->input->post('nama_peminjam'));
-			if ($this->Pinjam_model->hapus_data($where, 'pinjam')) {
-				$array = array('success' => true);
-			} else {
-				$array = array('error' => true);
+		$id_pinjam = $this->input->post('id_pinjam');
+		$where = array('id_pinjam'=>$id_pinjam);
+		if($this->Pinjam_model->hapus_data($where, 'pinjam')>0){
+			$response=[
+				'success'=>true,
+				'message'=>'data berhasil dihapus'
+			];
+		}else{
+			$response=[
+				'success'=>false,
+				'message'=>'data gagal dihapus'
+			];
+			}
+			echo json_encode($response);
+		}
+		public function DeleteAPI(){
+		if($this->input->post('username')){
+			$where=array('username'=>$this->input->post('username'));
+			if($this->Pinjam_model->hapus_data($where,'pinjam')){
+				$array=array('success'=>true);
+			}else{
+				$array=array('error'=>true);
 			}
 			echo json_encode($array);
 		}
 	}
+
 
 	public function ApiUpdate(){
 		$id_pinjam = $this->input->post('id_pinjam');
