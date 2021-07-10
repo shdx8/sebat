@@ -41,7 +41,7 @@ $getRole = $this->session->userdata('session_role');
 				<div class="card card-body">
 					<form class="user" action="<?php echo base_url('Pinjam/input');?>" method="POST">
 						<div class="form-group">
-							<input type="text" name="id_pinjam" class="form-control" value="<?= $id_pinjam ?>" readonly hidden>
+							<input type="text" name="id_pinjam" class="form-control" value="<?= $id_new ?>" readonly hidden>
 						</div>
 						<div class="form-group">
 							<H3 for="exampleFormControlInput1">Nama Peminjam</H3>
@@ -63,21 +63,21 @@ $getRole = $this->session->userdata('session_role');
 							<div class="row">
 								<div class="col-md-auto">
 									<label>
-										<input type="radio" name="cable" value="micro">
+										<input type="radio" name="kabel" value="micro">
 										<span class="radio-check"><i class="fa fa-check-circle fa-lg check-icon"></i></span>
 										<div class="radio-body"><img src="<?= base_url(); ?>/assets/img/cable/micro.png" alt=""></div>
 									</label>
 								</div>
 								<div class="col-md-auto">
 									<label>
-										<input type="radio" name="cable" value="type-c">
+										<input type="radio" name="kabel" value="type-c">
 										<span class="radio-check"><i class="fa fa-check-circle fa-lg check-icon"></i></span>
 										<div class="radio-body"><img src="<?= base_url(); ?>/assets/img/cable/type-c.png" alt=""></div>
 									</label>
 								</div>
 								<div class="col-md-auto">
 									<label>
-										<input type="radio" name="cable" value="lightning">
+										<input type="radio" name="kabel" value="lightning">
 										<span class="radio-check"><i class="fa fa-check-circle fa-lg check-icon"></i></span>
 										<div class="radio-body"><img src="<?= base_url(); ?>/assets/img/cable/lightning.png" alt=""></div>
 									</label>
@@ -98,7 +98,7 @@ $getRole = $this->session->userdata('session_role');
 							<div class="row harga">
 								<div class="col-md-3">
 									<label>
-										<input type="radio" name="durasi" value="1000">
+										<input type="radio" name="total" value="1000">
 										<span class="radio-check"><i class="fa fa-check-circle fa-lg check-icon"></i></span>
 										<div class="radio-body radio-text">30 Menit</div>
 										<div class="radio-option radio-text">Rp<strong>1000</strong></div>
@@ -106,7 +106,7 @@ $getRole = $this->session->userdata('session_role');
 								</div>
 								<div class="col-md-3">
 									<label>
-										<input type="radio" name="durasi" value="2000">
+										<input type="radio" name="total" value="2000">
 										<span class="radio-check"><i class="fa fa-check-circle fa-lg check-icon"></i></span>
 										<div class="radio-body radio-text">60 Menit</div>
 										<div class="radio-option radio-text">Rp<strong>2000</strong></div>
@@ -114,7 +114,7 @@ $getRole = $this->session->userdata('session_role');
 								</div>
 								<div class="col-md-3">
 									<label>
-										<input type="radio" name="durasi" value="3000">
+										<input type="radio" name="total" value="3000">
 										<span class="radio-check"><i class="fa fa-check-circle fa-lg check-icon"></i></span>
 										<div class="radio-body radio-text">90 Menit</div>
 										<div class="radio-option radio-text">Rp<strong>3000</strong></div>

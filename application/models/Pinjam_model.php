@@ -1,5 +1,27 @@
 <?php
 class Pinjam_model extends CI_Model{
+
+	// Function untuk membuat ID secara otomatis dari ID terakhir
+	function auto_id(){
+		$query = $this->db->query("SELECT max(id_pinjam) as id_new FROM pinjam");
+		$data =$query->row_array();
+		$id_pinjam = $data['id_new'];
+
+		// mengambil angka dari kode barang terbesar, menggunakan fungsi substr
+		// dan diubah ke integer dengan (int)
+		$urutan = (int) substr($id_pinjam, 3, 3);
+
+		// bilangan yang diambil ini ditambah 1 untuk menentukan nomor urut berikutnya
+		$urutan++;
+
+		// membentuk kode barang baru
+		// perintah sprintf("%03s", $urutan); berguna untuk membuat string menjadi 3 karakter
+		// misalnya perintah sprintf("%03s", 15); maka akan menghasilkan '015'
+		// angka yang diambil tadi digabungkan dengan kode huruf yang kita inginkan, misalnya BRG 
+		$huruf = "S-";
+		$id_pinjam = $huruf . sprintf("%03s", $urutan);
+		return $id_pinjam;
+	}
 	function getAll(){//function getAll
 		$this->db->select('*');//select semua data
 		$this->db->from('pinjam');//dari table user
@@ -34,5 +56,9 @@ class Pinjam_model extends CI_Model{
 		$query = $this->db->get();
 		return $query;
 	}
+
+
+
+	
 }
 ?>

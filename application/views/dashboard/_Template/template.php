@@ -69,6 +69,7 @@ $getRole = $this->session->userdata('session_role');
 	<script src="<?= base_url(); ?>/assets/js/chart.js"></script>
 	<script src="<?= base_url(); ?>/assets/js/date-range.js"></script>
 	<script src="<?= base_url(); ?>/assets/js/map.js"></script>
+	<script src="<?= base_url(); ?>/assets/js/radio-check.js"></script>
 	<script src="<?= base_url(); ?>/assets/js/custom.js"></script>
 
 
