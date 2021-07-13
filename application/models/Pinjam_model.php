@@ -48,6 +48,11 @@ class Pinjam_model extends CI_Model{
 		$this->db->delete($table);
 	}
 
+	function hapusApi($where, $table) {
+		$this->db->where($where);
+		$this->db->delete($table);
+	}
+
 	function login($user,$pass,$table){
 		$this->db->select('*');
 		$this->db->from('user');
