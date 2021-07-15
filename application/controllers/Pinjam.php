@@ -70,57 +70,50 @@ class Pinjam extends CI_Controller{//membuat controller mahasiswa
 	}
 
 	public function ApiDelete(){
-		$id_pinjam = $this->input->GET('id_pinjam');
+		$id_pinjam = $this->input->POST('id_pinjam');
 		$where = array('id_pinjam'=>$id_pinjam);
-		if($this->Pinjam_model->hapusAPI($where, 'pinjam')>0){
+		if($this->Pinjam_model->hapus_data($where, 'pinjam')>0){
 			$response=[
 				'success'=>true,
-				'message'=>'data berhasil dihapus'
+				'message'=>'data gagal dihapus'
 			];
 		}else{
 			$response=[
 				'success'=>false,
-				'message'=>'data gagal dihapus'
+				'message'=>'data berhasil dihapus'
 			];
 			}
 			echo json_encode($response);
 		}
-		public function DeleteAPI(){
-		if($this->input->GET('username')){
-			$where=array('username'=>$this->input->post('username'));
-			if($this->Pinjam_model->hapus_data($where,'pinjam')){
-				$array=array('success'=>true);
-			}else{
-				$array=array('error'=>true);
-			}
-			echo json_encode($array);
-		}
-	}
 
+	
 
-	public function ApiUpdate(){
-		$id_pinjam = $this->input->post('id_pinjam');
-		$nama_peminjam = $this->input->post('nama_peminjam');
-		$no_hp = $this->input->post('no_hp');
-		$cable = $this->input->post('kabel');
-		$durasi = $this->input->post('total');
-		$tgl_pinjam = $this->input->post('tgl_pinjam');
-
-		$data = array(//membuat array untuk menampung data yang telah diinput
-			'nama_peminjam' => $nama_peminjam,
-			'no_hp' => $no_hp,
-			'kabel' => $cable,
-			'total' => $durasi,
-			'tgl_pinjam' => $tgl_pinjam
+	public function ApiUpdate() {
+		$id_pinjam = $this->input->POST('id_pinjam');
+		$data = array(
+			'status' => 'selesai',
 		);
+		
 		$where = array(
 			'id_pinjam' => $id_pinjam
 		);
-		$this->Pinjam_model->update_data($where,$data, 'tm_user');
-		echo json_encode($array);
-	}
+		if($this->Pinjam_model->update_status($where,$data, 'pinjam')>0){
+				$response=[
+				'success'=>true,
+				'message'=>'gagal'
+			];
+		}else{
+			$response=[
+				'success'=>false,
+				'message'=>'selesai'
+			];
+			}
+			echo json_encode($response);
+		}
+	
 
-public function ApiLogin() {
+
+	public function ApiLogin() {
 		$this->load->model('User_model');
 		$_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
 		$username = $this->input->post('txt_user');
@@ -164,3 +157,4 @@ public function ApiLogin() {
 			echo json_encode($array);
 	}*/
 }
+{"mode":"full","isActive":false}
