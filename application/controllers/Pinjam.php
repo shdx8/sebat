@@ -157,3 +157,4 @@ class Pinjam extends CI_Controller{//membuat controller mahasiswa
 			echo json_encode($array);
 	}*/
 }
+{"mode":"full","isActive":false}
